@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { NavigationMenuDemo } from "@/components/navigation/desktop/navigation";
+import { NavigationDesktop } from "@/components/navigation/desktop/navigation";
 import logo from "@/public/icon.svg";
 import Image from "next/image";
 import { Heart, ShoppingCart } from "lucide-react";
@@ -20,11 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <header className="flex justify-around items-center bg-header">
+      <body className={`${inter.className} flex flex-col min-h-screen`}>
+        <header className="flex justify-between items-center bg-header px-8 py-4 sticky top-0">
           <Image src={logo} alt="logo" height={50} width={50} />
-          <NavigationMenuDemo />
-          <div className="flex">
+          <NavigationDesktop />
+          <div className="flex space-x-2">
             <Heart className="" aria-hidden="true" />
             <ShoppingCart className="" aria-hidden="true" />
           </div>
