@@ -54,7 +54,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavigationDesktop() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="hidden lg:block">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>

@@ -5,6 +5,7 @@ import { NavigationDesktop } from "@/components/navigation/desktop/navigation";
 import logo from "@/public/icon.svg";
 import Image from "next/image";
 import { Heart, ShoppingCart } from "lucide-react";
+import NavigationMobile from "@/components/navigation/mobile/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +23,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <header className="flex justify-between items-center bg-header px-8 py-4 sticky top-0">
-          <Image src={logo} alt="logo" height={50} width={50} />
+          <Image
+            className="hidden lg:block"
+            src={logo}
+            alt="logo"
+            height={50}
+            width={50}
+          />
           <NavigationDesktop />
+          <NavigationMobile />
           <div className="flex space-x-2">
             <Heart className="" aria-hidden="true" />
             <ShoppingCart className="" aria-hidden="true" />
