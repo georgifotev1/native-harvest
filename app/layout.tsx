@@ -6,6 +6,7 @@ import logo from "@/public/icon.svg";
 import Image from "next/image";
 import { Heart, ShoppingCart } from "lucide-react";
 import NavigationMobile from "@/components/navigation/mobile/navigation";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,13 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <header className="flex justify-between items-center bg-header px-8 py-4 sticky top-0">
-          <Image
-            className="hidden lg:block"
-            src={logo}
-            alt="logo"
-            height={50}
-            width={50}
-          />
+          <Link href="/" className="hidden lg:block">
+            <Image src={logo} alt="logo" height={50} width={50} />
+          </Link>
           <NavigationDesktop />
           <NavigationMobile />
           <div className="flex space-x-2">
