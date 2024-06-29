@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { NavigationDesktop } from "@/components/navigation/desktop/navigation";
 import logo from "@/public/icon.svg";
 import Image from "next/image";
 import { Heart, ShoppingCart } from "lucide-react";
-import NavigationMobile from "@/components/navigation/mobile/navigation";
 import Link from "next/link";
+import NavMenu from "@/components/navigation/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,8 +26,7 @@ export default function RootLayout({
           <Link href="/" className="hidden lg:block">
             <Image src={logo} alt="logo" height={50} width={50} />
           </Link>
-          <NavigationDesktop />
-          <NavigationMobile />
+          <NavMenu />
           <div className="flex space-x-2">
             <Heart className="" aria-hidden="true" />
             <ShoppingCart className="" aria-hidden="true" />

@@ -1,6 +1,13 @@
 "use client";
-
 import * as React from "react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { useMediaQuery } from "@/lib/hooks/mediaQuery";
+import { AlignJustify } from "lucide-react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
@@ -52,8 +59,9 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export function NavigationDesktop() {
-  return (
+export default function NavMenu() {
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
+  return isDesktop ? (
     <NavigationMenu className="hidden lg:block">
       <NavigationMenuList>
         <NavigationMenuItem>
@@ -114,6 +122,27 @@ export function NavigationDesktop() {
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
+  ) : (
+    <Sheet>
+      <SheetTrigger className="lg:hidden">
+        <AlignJustify />
+      </SheetTrigger>
+      <SheetContent side="left">
+        <SheetDescription>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <Link href="/docs" legacyBehavior passHref>
+                  <NavigationMenuLink className="">
+                    Documentation
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </SheetDescription>
+      </SheetContent>
+    </Sheet>
   );
 }
 
