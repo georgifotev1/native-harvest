@@ -28,7 +28,7 @@ export default function RootLayout({
             <Image src={logo} alt="logo" height={50} width={50} />
           </Link>
           <NavMenu />
-          <Input type="search" placeholder="Search" className="mx-4" />
+          <Input type="search" placeholder="Search" className="mx-5" />
           <div className="flex space-x-2">
             <Heart className="" aria-hidden="true" />
             <ShoppingCart className="" aria-hidden="true" />
