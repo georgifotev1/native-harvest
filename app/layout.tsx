@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import logo from "@/public/icon.svg";
 import Image from "next/image";
-import { Heart, ShoppingCart } from "lucide-react";
+import { Heart, Search, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import NavMenu from "@/components/navigation/navigation";
 import { Input } from "@/components/ui/input";
@@ -28,8 +28,8 @@ export default function RootLayout({
             <Image src={logo} alt="logo" height={50} width={50} />
           </Link>
           <NavMenu />
-          <Input type="search" placeholder="Search" className="mx-5" />
           <div className="flex space-x-2">
+            <Search />
             <Heart className="" aria-hidden="true" />
             <ShoppingCart className="" aria-hidden="true" />
           </div>
