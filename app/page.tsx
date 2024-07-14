@@ -1,6 +1,20 @@
 import Image from "next/image";
 import background from "../public/images/jacqueline-o-gara-2sfoa14KlCU-unsplash.jpg";
+import Honey from "../public/images/Honey.jpeg";
+import Tomatoes from "../public/images/Tomatos.jpeg";
 import { Button } from "@/components/ui/button";
+import ImageWithContent from "@/components/image-with-content/image-with-content";
+
+const categories = [
+  {
+    image: Honey,
+    content: "Honey",
+  },
+  {
+    image: Tomatoes,
+    content: "Tomatoes",
+  },
+];
 
 export default function Home() {
   return (
@@ -20,6 +34,14 @@ export default function Home() {
             </h1>
             <Button className="mx-auto">Разгледай</Button>
           </div>
+        </div>
+      </section>
+      <section id="categories">
+        <h2>Категории</h2>
+        <div>
+          {categories.map((category, index) => (
+            <ImageWithContent {...category} />
+          ))}
         </div>
       </section>
     </main>
