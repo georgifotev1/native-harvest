@@ -9,16 +9,48 @@ const categories = [
   {
     image: Honey,
     content: "Honey",
+    href: "/"
   },
   {
     image: Tomatoes,
     content: "Tomatoes",
+    href: "/"
+  },
+  {
+    image: Honey,
+    content: "Honey",
+    href: "/"
+  },
+  {
+    image: Tomatoes,
+    content: "Tomatoes",
+    href: "/"
+  },
+  {
+    image: Honey,
+    content: "Honey",
+    href: "/"
+  },
+  {
+    image: Tomatoes,
+    content: "Tomatoes",
+    href: "/"
+  },
+  {
+    image: Honey,
+    content: "Honey",
+    href: "/"
+  },
+  {
+    image: Tomatoes,
+    content: "Tomatoes",
+    href: "/"
   },
 ];
 
 export default function Home() {
   return (
-    <main className="px-8">
+    <main className="flex flex-col text-center">
       <section id="main-banner">
         <div className="h-screen overflow-hidden relative">
           <Image
@@ -29,18 +61,18 @@ export default function Home() {
           />
           <div className="absolute top-0 left-0 h-full w-full bg-black/50"></div>
           <div className="w-full absolute top-1/3 text-white flex flex-col space-y-10">
-            <h1 className="text-5xl lg:text-7xl text-center">
+            <h1 className="text-5xl lg:text-7xl">
               Родна Продукция
             </h1>
             <Button className="mx-auto">Разгледай</Button>
           </div>
         </div>
       </section>
-      <section id="categories">
-        <h2>Категории</h2>
-        <div>
+      <section id="categories" className="max-w-[1600px] p-8 space-y-10">
+        <h2 className="font-bold text-2xl">Категории</h2>
+        <div className="flex justify-center items-center flex-wrap">
           {categories.map((category, index) => (
-            <ImageWithContent {...category} />
+            <ImageWithContent key={index} {...category} />
           ))}
         </div>
       </section>
