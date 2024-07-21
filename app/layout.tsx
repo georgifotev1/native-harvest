@@ -22,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} flex flex-col min-h-screen`}>
-        <header className="flex justify-between items-center bg-header px-8 py-4 sticky top-0">
+        <header className="flex justify-between items-center px-8 py-4 sticky top-0 z-10 bg-white">
           <Link href="/" className="hidden lg:block">
-            <Image src={logo} alt="logo" height={50} width={50} />
+            <Image src={logo} alt="logo" className="border rounded-full p-2 max-w-20" />
           </Link>
           <NavMenu />
           <div className="flex space-x-2">
