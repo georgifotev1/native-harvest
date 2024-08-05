@@ -1,52 +1,52 @@
 import Image from "next/image";
 import background from "../public/images/jacqueline-o-gara-2sfoa14KlCU-unsplash.jpg";
-import Honey from "../public/images/Honey.jpeg";
-import Tomatoes from "../public/images/Tomatos.jpeg";
+import Honey from "../public/images/Honey.jpg";
+import Vegetables from "../public/images/Vegetables.jpg";
 import { Button } from "@/components/ui/button";
-import ImageWithContent from "@/components/image-with-content/image-with-content";
+import CategoryCard from "@/components/image-with-content/image-with-content";
 import NaturalFoods from "@/public/images/natural-food-items.jpg";
 import PreFooter from "@/public/images/pre-footer-large.jpg";
+import Apple from "@/public/images/Apple.jpg";
+import Cheese from "@/public/images/Cheese.jpg";
+import Meat from "@/public/images/Meat.jpg";
+import Nuts from "@/public/images/Nuts.jpg";
+import WinterAndSweets from "@/public/images/WinterAndSweets.jpg";
 
 const categories = [
   {
     image: Honey,
-    content: "Honey",
-    href: "/",
+    content: "Мед",
+    href: "/categories/honey",
   },
   {
-    image: Tomatoes,
-    content: "Tomatoes",
-    href: "/",
+    image: Apple,
+    content: "Плодове",
+    href: "/categories/fruits",
   },
   {
-    image: Honey,
-    content: "Honey",
-    href: "/",
+    image: Vegetables,
+    content: "Зеленчуци",
+    href: "/categories/vegetables",
   },
   {
-    image: Tomatoes,
-    content: "Tomatoes",
-    href: "/",
+    image: Cheese,
+    content: "Млечни Продукти",
+    href: "/categories/dairy-products",
   },
   {
-    image: Honey,
-    content: "Honey",
-    href: "/",
+    image: Meat,
+    content: "Месни Продукти",
+    href: "/categories/meat-products",
   },
   {
-    image: Tomatoes,
-    content: "Tomatoes",
-    href: "/",
+    image: Nuts,
+    content: "Ядки и Семена",
+    href: "/categories/nuts-and-seeds",
   },
   {
-    image: Honey,
-    content: "Honey",
-    href: "/",
-  },
-  {
-    image: Tomatoes,
-    content: "Tomatoes",
-    href: "/",
+    image: WinterAndSweets,
+    content: "Зимнина и Сладки",
+    href: "/categories/winter-food",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function Home() {
         <H2 title="Категории" />
         <div className="flex justify-center items-center flex-wrap">
           {categories.map((category, index) => (
-            <ImageWithContent key={index} {...category} />
+            <CategoryCard key={index} {...category} />
           ))}
         </div>
       </HomePageSection>
