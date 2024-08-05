@@ -52,7 +52,7 @@ const categories = [
 export default function Home() {
   return (
     <main className="flex flex-col text-center">
-      <section id="main-banner">
+      <HomePageSection fullWidth>
         <div className="h-screen overflow-hidden relative">
           <Image
             src={background}
@@ -66,25 +66,53 @@ export default function Home() {
             <Button className="mx-auto">Разгледай</Button>
           </div>
         </div>
-      </section>
-      <section id="categories" className="max-w-[1600px] p-8 space-y-10">
+      </HomePageSection>
+      <HomePageSection>
         <H2 title="Категории" />
         <div className="flex justify-center items-center flex-wrap">
           {categories.map((category, index) => (
             <ImageWithContent key={index} {...category} />
           ))}
         </div>
-      </section>
-      <section id="about">
+      </HomePageSection>
+      <HomePageSection>
         <H2 title="Хранителни продукти произведени в България" />
-        <div>
-          <Image src={NaturalFoods} alt="natural foods" />
+        <div className="flex flex-col lg:flex-row">
+          <Image src={NaturalFoods} alt="natural foods" className="w-full min-h-[300px] flex-1" />
+          <div className="flex flex-col flex-1 justify-evenly px-8 py-6 text-start border-b-2 lg:py-2">
+            <H3 title="Хранителни продукти"></H3>
+            <H4 title="Lorem ipsum dolor sit amet consectetur adipisicing elit."></H4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Generate a random sentence. Lorem ipsum dolor sit amet consectetur adipisicing elit. Generate a random sentence. Lorem ipsum dolor sit amet consectetur adipisicing elit. Generate a random sentence.</p>
+            <Button className="self-center">Button</Button>
+          </div>
         </div>
-      </section>
+      </HomePageSection>
     </main>
   );
 }
 
 const H2 = ({ title }: { title: string }) => {
   return <h2 className="font-bold text-2xl">{title}</h2>;
+};
+
+const H3 = ({ title }: { title: string }) => {
+  return <h2 className="font-bold text-xl">{title}</h2>;
+};
+
+const H4 = ({ title }: { title: string }) => {
+  return <h2 className="font-bold text-lg">{title}</h2>;
+};
+
+
+const HomePageSection = ({
+  fullWidth,
+  children,
+}: {
+  fullWidth?: boolean;
+  children: JSX.Element | JSX.Element[];
+}) => {
+  const isContentWidth = "max-w-[1600px] p-8 space-y-10";
+  return (
+    <section className={fullWidth ? "" : isContentWidth}>{children}</section>
+  );
 };
