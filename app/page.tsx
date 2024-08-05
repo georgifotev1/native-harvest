@@ -5,6 +5,7 @@ import Tomatoes from "../public/images/Tomatos.jpeg";
 import { Button } from "@/components/ui/button";
 import ImageWithContent from "@/components/image-with-content/image-with-content";
 import NaturalFoods from "@/public/images/natural-food-items.jpg";
+import PreFooter from "@/public/images/pre-footer-large.jpg";
 
 const categories = [
   {
@@ -79,13 +80,16 @@ export default function Home() {
         <H2 title="Хранителни продукти произведени в България" />
         <div className="flex flex-col lg:flex-row">
           <Image src={NaturalFoods} alt="natural foods" className="w-full min-h-[300px] flex-1" />
-          <div className="flex flex-col flex-1 justify-evenly px-8 py-6 text-start border-b-2 lg:py-2">
+          <div className="flex flex-col flex-1 justify-evenly space-y-1 px-8 py-6 text-center border-b-2 lg:py-2 lg:text-start">
             <H3 title="Хранителни продукти"></H3>
             <H4 title="Lorem ipsum dolor sit amet consectetur adipisicing elit."></H4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Generate a random sentence. Lorem ipsum dolor sit amet consectetur adipisicing elit. Generate a random sentence. Lorem ipsum dolor sit amet consectetur adipisicing elit. Generate a random sentence.</p>
             <Button className="self-center">Button</Button>
           </div>
         </div>
+      </HomePageSection>
+      <HomePageSection fullWidth>
+          <Image src={PreFooter} alt="pre-footer" className="w-full"/>
       </HomePageSection>
     </main>
   );
@@ -113,6 +117,6 @@ const HomePageSection = ({
 }) => {
   const isContentWidth = "max-w-[1600px] p-8 space-y-10";
   return (
-    <section className={fullWidth ? "" : isContentWidth}>{children}</section>
+    <section className={fullWidth ? "w-full" : isContentWidth}>{children}</section>
   );
 };

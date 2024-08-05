@@ -34,7 +34,7 @@ export default function RootLayout({
           </div>
         </header>
         {children}
-        <footer className="mt-auto bg-slate-600">
+        <footer className="mt-auto bg-stone-800 text-white">
           <div className="py-5">
             <p>Footer</p>
           </div>
